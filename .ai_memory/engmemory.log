@@ -2,3 +2,7 @@
 2026-05-23 18:08:18,943 INFO Captured commit b0b92805 on branch master (ticket: none, files: 3107)
 2026-05-23 18:08:18,943 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-23T12-38-1000-00_b0b92805.json
 2026-05-23 18:08:18,943 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-23 18:17:55,869 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-23 18:17:56,015 INFO Captured commit f8aca660 on branch master (ticket: none, files: 3)
+2026-05-23 18:17:56,015 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-23T12-47-5400-00_f8aca660.json
+2026-05-23 18:17:56,015 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
