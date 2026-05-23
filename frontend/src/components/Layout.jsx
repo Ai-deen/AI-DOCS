@@ -14,10 +14,10 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-gradient-to-b from-blue-900 to-indigo-900 text-white flex flex-col">
-        <div className="p-6 border-b border-blue-700">
+      <aside className="w-64 bg-gradient-to-b from-emerald-900 to-teal-900 text-white flex flex-col">
+        <div className="p-6 border-b border-emerald-700">
           <h1 className="text-xl font-bold">🧠 AI Analyzer</h1>
-          <p className="text-blue-300 text-sm mt-1">Document Workflow</p>
+          <p className="text-emerald-300 text-sm mt-1">Document Workflow</p>
         </div>
         <nav className="flex-1 p-4">
           {navItems.map(({ path, label, icon: Icon }) => (
@@ -26,8 +26,8 @@ export default function Layout({ children }) {
               to={path}
               className={`flex items-center gap-3 px-4 py-3 rounded-lg mb-1 transition-colors ${
                 location.pathname === path
-                  ? 'bg-blue-700 text-white'
-                  : 'text-blue-200 hover:bg-blue-800 hover:text-white'
+                  ? 'bg-emerald-700 text-white'
+                  : 'text-emerald-200 hover:bg-emerald-800 hover:text-white'
               }`}
             >
               <Icon size={20} />

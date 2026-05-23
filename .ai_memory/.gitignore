@@ -1,0 +1,4 @@
+# EngMemory — local engineering memory
+# Do not commit raw capture files; summaries are stored in Azure AI Search
+commits/
+index.jsonl
