@@ -52,8 +52,8 @@ export default function Documents() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Documents</h1>
-        <p className="text-gray-500 mt-1">Upload and manage your documents for AI analysis</p>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Documents</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">Upload and manage your documents for AI analysis</p>
       </div>
 
       <FileUpload onUpload={handleUpload} isUploading={isUploading} />
@@ -69,49 +69,49 @@ export default function Documents() {
             <p>No documents yet. Upload one above to get started!</p>
           </div>
         ) : (
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
             <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
                 <tr>
-                  <th className="text-left p-4 text-sm font-medium text-gray-600">Name</th>
-                  <th className="text-left p-4 text-sm font-medium text-gray-600">Type</th>
-                  <th className="text-left p-4 text-sm font-medium text-gray-600">Size</th>
-                  <th className="text-left p-4 text-sm font-medium text-gray-600">Uploaded</th>
-                  <th className="text-right p-4 text-sm font-medium text-gray-600">Actions</th>
+                  <th className="text-left p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Name</th>
+                  <th className="text-left p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Type</th>
+                  <th className="text-left p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Size</th>
+                  <th className="text-left p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Uploaded</th>
+                  <th className="text-right p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                 {documents.map((doc) => (
-                  <tr key={doc.id} className="hover:bg-gray-50">
+                  <tr key={doc.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
                     <td className="p-4">
                       <div className="flex items-center gap-2">
                         <FileText size={16} className="text-blue-500" />
-                        <span className="font-medium">{doc.original_name}</span>
+                        <span className="font-medium dark:text-gray-100">{doc.original_name}</span>
                       </div>
                     </td>
                     <td className="p-4">
-                      <span className="px-2 py-1 bg-gray-100 rounded text-xs font-mono uppercase">
+                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs font-mono uppercase dark:text-gray-300">
                         {doc.file_type}
                       </span>
                     </td>
-                    <td className="p-4 text-sm text-gray-600">
+                    <td className="p-4 text-sm text-gray-600 dark:text-gray-300">
                       {(doc.file_size / 1024).toFixed(1)} KB
                     </td>
-                    <td className="p-4 text-sm text-gray-600">
+                    <td className="p-4 text-sm text-gray-600 dark:text-gray-300">
                       {new Date(doc.uploaded_at).toLocaleString()}
                     </td>
                     <td className="p-4 text-right">
                       <div className="flex items-center justify-end gap-2">
                         <Link
                           to={`/documents/${doc.id}`}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                          className="p-2 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg transition-colors"
                           title="View & Analyze"
                         >
                           <Eye size={16} />
                         </Link>
                         <button
                           onClick={() => handleDelete(doc.id, doc.original_name)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                          className="p-2 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg transition-colors"
                           title="Delete"
                         >
                           <Trash2 size={16} />

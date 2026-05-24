@@ -67,14 +67,14 @@ export default function Workflows() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Workflows</h1>
-        <p className="text-gray-500 mt-1">Run complete AI analysis pipelines on your documents</p>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Workflows</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">Run complete AI analysis pipelines on your documents</p>
       </div>
 
       {/* Create Workflow */}
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-8">
-        <h2 className="text-lg font-semibold mb-4">New Workflow</h2>
-        <p className="text-sm text-gray-500 mb-4">
+      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 mb-8">
+        <h2 className="text-lg font-semibold dark:text-white mb-4">New Workflow</h2>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
           A workflow runs all 5 analysis types (Summary, Sentiment, Key Points, Entities, Full Analysis) automatically.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -83,12 +83,12 @@ export default function Workflows() {
             placeholder="Workflow name (optional)"
             value={workflowName}
             onChange={(e) => setWorkflowName(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <select
             value={selectedDoc}
             onChange={(e) => setSelectedDoc(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
             <option value="">Select a document...</option>
             {documents.map((doc) => (
@@ -124,29 +124,29 @@ export default function Workflows() {
           <p>No workflows yet. Run one above!</p>
         </div>
       ) : (
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
               <tr>
-                <th className="text-left p-4 text-sm font-medium text-gray-600">Status</th>
-                <th className="text-left p-4 text-sm font-medium text-gray-600">Name</th>
-                <th className="text-left p-4 text-sm font-medium text-gray-600">Progress</th>
-                <th className="text-left p-4 text-sm font-medium text-gray-600">Created</th>
+                <th className="text-left p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Status</th>
+                <th className="text-left p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Name</th>
+                <th className="text-left p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Progress</th>
+                <th className="text-left p-4 text-sm font-medium text-gray-600 dark:text-gray-300">Created</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
               {workflows.map((wf) => (
-                <tr key={wf.id} className="hover:bg-gray-50">
+                <tr key={wf.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
                   <td className="p-4">{statusIcon(wf.status)}</td>
                   <td className="p-4">
-                    <p className="font-medium">{wf.name}</p>
+                    <p className="font-medium dark:text-gray-100">{wf.name}</p>
                     {wf.description && (
                       <p className="text-sm text-gray-400">{wf.description}</p>
                     )}
                   </td>
                   <td className="p-4">
                     <div className="flex items-center gap-2">
-                      <div className="flex-1 bg-gray-200 rounded-full h-2 max-w-[100px]">
+                      <div className="flex-1 bg-gray-200 dark:bg-gray-600 rounded-full h-2 max-w-[100px]">
                         <div
                           className="bg-purple-600 h-2 rounded-full transition-all"
                           style={{ width: `${(wf.steps_completed / wf.total_steps) * 100}%` }}
@@ -157,7 +157,7 @@ export default function Workflows() {
                       </span>
                     </div>
                   </td>
-                  <td className="p-4 text-sm text-gray-600">
+                  <td className="p-4 text-sm text-gray-600 dark:text-gray-300">
                     {new Date(wf.created_at).toLocaleString()}
                   </td>
                 </tr>

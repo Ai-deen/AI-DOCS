@@ -44,8 +44,8 @@ export default function Dashboard() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-gray-500 mt-1">AI-Powered Document Analysis Workflow</p>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">AI-Powered Document Analysis Workflow</p>
       </div>
 
       {/* Stats */}
@@ -106,21 +106,21 @@ export default function Dashboard() {
 
       {/* Recent Documents */}
       {recentDocs.length > 0 && (
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
-          <div className="p-4 border-b border-gray-100">
-            <h2 className="font-semibold text-lg">Recent Documents</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+          <div className="p-4 border-b border-gray-100 dark:border-gray-700">
+            <h2 className="font-semibold text-lg dark:text-white">Recent Documents</h2>
           </div>
-          <div className="divide-y divide-gray-100">
+          <div className="divide-y divide-gray-100 dark:divide-gray-700">
             {recentDocs.map((doc) => (
               <Link
                 key={doc.id}
                 to={`/documents/${doc.id}`}
-                className="flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <FileText size={20} className="text-blue-500" />
                   <div>
-                    <p className="font-medium">{doc.original_name}</p>
+                    <p className="font-medium dark:text-gray-100">{doc.original_name}</p>
                     <p className="text-sm text-gray-400">
                       {(doc.file_size / 1024).toFixed(1)} KB • {doc.file_type.toUpperCase()}
                     </p>
@@ -140,19 +140,19 @@ export default function Dashboard() {
 
 function StatCard({ icon: Icon, label, value, color }) {
   const colors = {
-    blue: 'bg-blue-50 text-blue-600',
-    purple: 'bg-purple-50 text-purple-600',
-    green: 'bg-green-50 text-green-600',
-    red: 'bg-red-50 text-red-600',
+    blue: 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400',
+    purple: 'bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
+    green: 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400',
+    red: 'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400',
   };
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+    <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6">
       <div className={`w-10 h-10 rounded-lg ${colors[color]} flex items-center justify-center mb-3`}>
         <Icon size={20} />
       </div>
-      <p className="text-2xl font-bold">{value}</p>
-      <p className="text-sm text-gray-500">{label}</p>
+      <p className="text-2xl font-bold dark:text-white">{value}</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400">{label}</p>
     </div>
   );
 }

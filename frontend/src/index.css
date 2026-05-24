@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-50 text-gray-900;
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
 }
 
 .markdown-content h1 { @apply text-2xl font-bold mt-4 mb-2; }
@@ -14,4 +14,4 @@ body {
 .markdown-content ol { @apply list-decimal pl-6 mb-2; }
 .markdown-content li { @apply mb-1; }
 .markdown-content strong { @apply font-semibold; }
-.markdown-content code { @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono; }
+.markdown-content code { @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono; }
