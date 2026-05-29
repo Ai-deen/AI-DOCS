@@ -68,6 +68,17 @@ export const getWorkflow = async (id) => {
   return response.data;
 };
 
+// Flashcards
+export const generateFlashcards = async (workflowId) => {
+  const response = await api.post(`/workflows/${workflowId}/flashcards`);
+  return response.data;
+};
+
+export const getFlashcards = async (workflowId) => {
+  const response = await api.get(`/workflows/${workflowId}/flashcards`);
+  return response.data;
+};
+
 // Chat
 export const sendChatMessage = async (message, documentId = null) => {
   const response = await api.post('/chat/', {

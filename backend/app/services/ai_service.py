@@ -160,3 +160,46 @@ async def chat_with_document(message: str, document_content: str = None) -> str:
         return response.choices[0].message.content
     except Exception as e:
         return f"I encountered an error: {str(e)}. Please check your AI provider configuration."
+
+
+async def generate_flashcards(content: str) -> list[dict]:
+    """Generate Q&A flashcards from document content."""
+    client = get_ai_client()
+    model = get_model_name()
+
+    prompt = f"""Generate 8-12 study flashcards (question and answer pairs) from the following document.
+Each flashcard should test understanding of a key concept, fact, or idea from the document.
+
+Return ONLY a JSON array of objects with "question" and "answer" fields. No other text.
+Example format:
+[
+  {{"question": "What is X?", "answer": "X is..."}},
+  {{"question": "Why does Y happen?", "answer": "Y happens because..."}}
+]
+
+Document:
+{content[:8000]}"""
+
+    try:
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "You are an expert educator. Generate clear, concise flashcards that help students learn key concepts. Return ONLY valid JSON."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.5,
+            max_tokens=3000,
+        )
+
+        import json
+        raw = response.choices[0].message.content.strip()
+        # Handle potential markdown code blocks in response
+        if raw.startswith("```"):
+            raw = raw.split("\n", 1)[1]
+            raw = raw.rsplit("```", 1)[0]
+        cards = json.loads(raw)
+        if isinstance(cards, list):
+            return [{"question": c["question"], "answer": c["answer"]} for c in cards if "question" in c and "answer" in c]
+        return []
+    except Exception:
+        return []

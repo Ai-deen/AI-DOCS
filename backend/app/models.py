@@ -63,3 +63,17 @@ class Workflow(Base):
     result_summary = Column(Text, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     completed_at = Column(DateTime, nullable=True)
+
+    flashcards = relationship("Flashcard", back_populates="workflow", cascade="all, delete-orphan")
+
+
+class Flashcard(Base):
+    __tablename__ = "flashcards"
+
+    id = Column(Integer, primary_key=True, index=True)
+    workflow_id = Column(Integer, ForeignKey("workflows.id"), nullable=False)
+    question = Column(Text, nullable=False)
+    answer = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    workflow = relationship("Workflow", back_populates="flashcards")
