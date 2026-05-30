@@ -6,3 +6,888 @@
 2026-05-23 18:17:56,015 INFO Captured commit f8aca660 on branch master (ticket: none, files: 3)
 2026-05-23 18:17:56,015 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-23T12-47-5400-00_f8aca660.json
 2026-05-23 18:17:56,015 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-23 18:51:54,026 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-23 18:51:54,492 INFO Captured commit ec9524c0 on branch master (ticket: none, files: 2)
+2026-05-23 18:51:54,500 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-23T13-21-4900-00_ec9524c0.json
+2026-05-23 18:51:54,500 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-23 20:06:13,326 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-23 20:06:13,780 INFO Captured commit 89a8a541 on branch master (ticket: none, files: 1)
+2026-05-23 20:06:13,784 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-23T14-36-0700-00_89a8a541.json
+2026-05-23 20:06:13,785 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-23 20:12:17,232 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-23 20:12:17,437 INFO Captured commit 5e84b010 on branch main (ticket: KAN-2, files: 2)
+2026-05-23 20:12:17,440 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-23T14-42-1500-00_5e84b010.json
+2026-05-23 20:12:17,440 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:38:45,913 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:38:46,111 INFO Captured commit 5e597846 on branch main (ticket: KAN-4, files: 1)
+2026-05-24 15:38:46,115 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-08-4400-00_5e597846.json
+2026-05-24 15:38:46,277 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '442'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': '8d31a2cc-5758-11f1-bb67-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:38:47,827 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '8d31a2cc-5758-11f1-bb67-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:08:47 GMT'
+2026-05-24 15:38:47,828 INFO Indexed commit 5e597846 in Azure AI Search
+2026-05-24 15:38:47,829 INFO No environment configuration found.
+2026-05-24 15:38:47,836 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:38:47,839 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:38:52,783 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:38:52,784 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-08-44%2B00-00_5e597846.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '792'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '8e1fcfd4-5758-11f1-b560-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:38:53,972 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:08:53 GMT'
+    'ETag': '"0x8DEB97C75A15729"'
+    'x-ms-request-id': '0770a3a3-501e-0030-0865-ebd570000000'
+    'x-ms-client-request-id': '8e1fcfd4-5758-11f1-b560-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:08:52 GMT'
+2026-05-24 15:38:53,973 INFO Uploaded to Azure Blob: 2026-05-24T10-08-44+00-00_5e597846.json
+2026-05-24 15:38:53,975 INFO Auto-indexed commit 5e597846 to Azure
+2026-05-24 15:38:53,975 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:39:47,313 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:39:47,486 INFO Captured commit 2a504722 on branch main (ticket: KAN-5, files: 1)
+2026-05-24 15:39:47,488 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-09-4500-00_2a504722.json
+2026-05-24 15:39:47,617 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '445'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': 'b1c169df-5758-11f1-8ebb-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:39:49,006 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': 'b1c169df-5758-11f1-8ebb-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:09:48 GMT'
+2026-05-24 15:39:49,006 INFO Indexed commit 2a504722 in Azure AI Search
+2026-05-24 15:39:49,007 INFO No environment configuration found.
+2026-05-24 15:39:49,012 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:39:49,017 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:39:51,147 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:39:51,147 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-09-45%2B00-00_2a504722.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '794'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'b29672bf-5758-11f1-8c4a-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:39:52,478 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:09:51 GMT'
+    'ETag': '"0x8DEB97C9880F8E5"'
+    'x-ms-request-id': '669e53e2-701e-0027-6565-eb7c7b000000'
+    'x-ms-client-request-id': 'b29672bf-5758-11f1-8c4a-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:09:51 GMT'
+2026-05-24 15:39:52,479 INFO Uploaded to Azure Blob: 2026-05-24T10-09-45+00-00_2a504722.json
+2026-05-24 15:39:52,480 INFO Auto-indexed commit 2a504722 to Azure
+2026-05-24 15:39:52,480 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:41:04,887 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:41:05,052 INFO Captured commit 4974f3e9 on branch main (ticket: KAN-6, files: 1)
+2026-05-24 15:41:05,055 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-11-0300-00_4974f3e9.json
+2026-05-24 15:41:05,180 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '421'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': 'dffc889a-5758-11f1-a34e-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:41:06,651 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': 'dffc889a-5758-11f1-a34e-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:11:05 GMT'
+2026-05-24 15:41:06,651 INFO Indexed commit 4974f3e9 in Azure AI Search
+2026-05-24 15:41:06,652 INFO No environment configuration found.
+2026-05-24 15:41:06,656 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:41:06,658 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:41:08,664 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:41:08,664 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-11-03%2B00-00_4974f3e9.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '776'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'e0de089d-5758-11f1-adf1-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:41:09,883 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:11:09 GMT'
+    'ETag': '"0x8DEB97CC6A47738"'
+    'x-ms-request-id': 'c59dbbb9-801e-009a-7465-ebf566000000'
+    'x-ms-client-request-id': 'e0de089d-5758-11f1-adf1-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:11:09 GMT'
+2026-05-24 15:41:09,883 INFO Uploaded to Azure Blob: 2026-05-24T10-11-03+00-00_4974f3e9.json
+2026-05-24 15:41:09,884 INFO Auto-indexed commit 4974f3e9 to Azure
+2026-05-24 15:41:09,884 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:42:14,773 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:42:14,942 INFO Captured commit 60288b46 on branch main (ticket: KAN-7, files: 1)
+2026-05-24 15:42:14,945 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-12-1300-00_60288b46.json
+2026-05-24 15:42:15,082 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '412'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': '09a6b0ae-5759-11f1-9b18-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:42:16,385 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '09a6b0ae-5759-11f1-9b18-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:12:15 GMT'
+2026-05-24 15:42:16,385 INFO Indexed commit 60288b46 in Azure AI Search
+2026-05-24 15:42:16,387 INFO No environment configuration found.
+2026-05-24 15:42:16,392 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:42:16,393 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:42:18,380 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:42:18,380 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-12-13%2B00-00_60288b46.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '772'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '0a6ec77a-5759-11f1-a5c1-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:42:19,743 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:12:19 GMT'
+    'ETag': '"0x8DEB97CF048176E"'
+    'x-ms-request-id': '2a5c135f-e01e-00b3-7165-ebcb12000000'
+    'x-ms-client-request-id': '0a6ec77a-5759-11f1-a5c1-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:12:18 GMT'
+2026-05-24 15:42:19,743 INFO Uploaded to Azure Blob: 2026-05-24T10-12-13+00-00_60288b46.json
+2026-05-24 15:42:19,744 INFO Auto-indexed commit 60288b46 to Azure
+2026-05-24 15:42:19,744 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:43:11,778 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:43:11,951 INFO Captured commit 6a01ad23 on branch main (ticket: none, files: 1)
+2026-05-24 15:43:11,954 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-13-1000-00_6a01ad23.json
+2026-05-24 15:43:12,076 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '393'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': '2b9f2b5b-5759-11f1-b690-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:43:13,877 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '2b9f2b5b-5759-11f1-b690-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:13:13 GMT'
+2026-05-24 15:43:13,878 INFO Indexed commit 6a01ad23 in Azure AI Search
+2026-05-24 15:43:13,879 INFO No environment configuration found.
+2026-05-24 15:43:13,884 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:43:13,885 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:43:15,926 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:43:15,926 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-13-10%2B00-00_6a01ad23.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '755'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '2cb34e3b-5759-11f1-b7c5-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:43:17,319 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:13:16 GMT'
+    'ETag': '"0x8DEB97D12996F4E"'
+    'x-ms-request-id': '585bc2a6-401e-002c-5865-eb8710000000'
+    'x-ms-client-request-id': '2cb34e3b-5759-11f1-b7c5-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:13:16 GMT'
+2026-05-24 15:43:17,320 INFO Uploaded to Azure Blob: 2026-05-24T10-13-10+00-00_6a01ad23.json
+2026-05-24 15:43:17,322 INFO Auto-indexed commit 6a01ad23 to Azure
+2026-05-24 15:43:17,322 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:46:02,451 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:46:02,701 INFO Captured commit ed17c92d on branch main (ticket: KAN-8, files: 1)
+2026-05-24 15:46:02,705 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-16-0000-00_ed17c92d.json
+2026-05-24 15:46:02,893 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '406'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': '916ffd73-5759-11f1-9866-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:46:04,421 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '916ffd73-5759-11f1-9866-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:16:03 GMT'
+2026-05-24 15:46:04,422 INFO Indexed commit ed17c92d in Azure AI Search
+2026-05-24 15:46:04,425 INFO No environment configuration found.
+2026-05-24 15:46:04,434 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:46:04,438 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:46:06,906 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:46:06,907 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-16-00%2B00-00_ed17c92d.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '766'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '925b8f83-5759-11f1-9295-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:46:08,353 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:16:07 GMT'
+    'ETag': '"0x8DEB97D788B64DD"'
+    'x-ms-request-id': '45a6c194-b01e-0007-3e66-eb07dc000000'
+    'x-ms-client-request-id': '925b8f83-5759-11f1-9295-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:16:07 GMT'
+2026-05-24 15:46:08,353 INFO Uploaded to Azure Blob: 2026-05-24T10-16-00+00-00_ed17c92d.json
+2026-05-24 15:46:08,354 INFO Auto-indexed commit ed17c92d to Azure
+2026-05-24 15:46:08,354 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:46:56,396 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:46:56,577 INFO Captured commit 3cc6258b on branch main (ticket: none, files: 1)
+2026-05-24 15:46:56,580 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-16-5500-00_3cc6258b.json
+2026-05-24 15:46:56,711 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '386'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': 'b183d5cb-5759-11f1-8692-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:46:58,039 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': 'b183d5cb-5759-11f1-8692-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:16:57 GMT'
+2026-05-24 15:46:58,039 INFO Indexed commit 3cc6258b in Azure AI Search
+2026-05-24 15:46:58,040 INFO No environment configuration found.
+2026-05-24 15:46:58,045 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:46:58,047 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:47:00,098 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:47:00,099 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-16-55%2B00-00_3cc6258b.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '748'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'b24fc6b8-5759-11f1-b02b-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:47:01,478 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:17:00 GMT'
+    'ETag': '"0x8DEB97D9835E545"'
+    'x-ms-request-id': '85ee9227-c01e-001d-0e66-eb6603000000'
+    'x-ms-client-request-id': 'b24fc6b8-5759-11f1-b02b-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:17:00 GMT'
+2026-05-24 15:47:01,479 INFO Uploaded to Azure Blob: 2026-05-24T10-16-55+00-00_3cc6258b.json
+2026-05-24 15:47:01,480 INFO Auto-indexed commit 3cc6258b to Azure
+2026-05-24 15:47:01,480 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:47:41,247 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:47:41,475 INFO Captured commit 3cc6258b on branch main (ticket: none, files: 1)
+2026-05-24 15:47:41,477 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-16-5500-00_3cc6258b.json
+2026-05-24 15:47:41,578 INFO AI context saved for commit 3cc6258b (10 messages)
+2026-05-24 15:47:41,724 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '386'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': 'cc585c42-5759-11f1-b00c-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:47:43,217 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': 'cc585c42-5759-11f1-b00c-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:17:42 GMT'
+2026-05-24 15:47:43,218 INFO Indexed commit 3cc6258b in Azure AI Search
+2026-05-24 15:47:43,225 INFO No environment configuration found.
+2026-05-24 15:47:43,237 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:47:43,241 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:47:45,351 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:47:45,352 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-16-55%2B00-00_3cc6258b.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '748'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'cd3fb64e-5759-11f1-9a9b-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:47:46,820 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:17:46 GMT'
+    'ETag': '"0x8DEB97DB33CBA34"'
+    'x-ms-request-id': '136f46d2-c01e-007f-2366-eba424000000'
+    'x-ms-client-request-id': 'cd3fb64e-5759-11f1-9a9b-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:17:45 GMT'
+2026-05-24 15:47:46,821 INFO Uploaded to Azure Blob: 2026-05-24T10-16-55+00-00_3cc6258b.json
+2026-05-24 15:47:46,823 INFO Auto-indexed commit 3cc6258b to Azure
+2026-05-24 15:47:46,824 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:50:03,125 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:50:03,364 INFO Captured commit fe3cc636 on branch main (ticket: KAN-9, files: 1)
+2026-05-24 15:50:03,367 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-20-0000-00_fe3cc636.json
+2026-05-24 15:50:03,607 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '414'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': '20e9d8bc-575a-11f1-b16e-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:50:04,995 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '20e9d8bc-575a-11f1-b16e-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:20:03 GMT'
+2026-05-24 15:50:04,995 INFO Indexed commit fe3cc636 in Azure AI Search
+2026-05-24 15:50:04,996 INFO No environment configuration found.
+2026-05-24 15:50:05,003 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:50:05,005 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:50:07,414 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:50:07,415 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-20-00%2B00-00_fe3cc636.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '770'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '21bf1d5a-575a-11f1-a1f5-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:50:09,392 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:20:08 GMT'
+    'ETag': '"0x8DEB97E08378742"'
+    'x-ms-request-id': '8412d9d9-701e-00fc-5d66-ebba46000000'
+    'x-ms-client-request-id': '21bf1d5a-575a-11f1-a1f5-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:20:07 GMT'
+2026-05-24 15:50:09,393 INFO Uploaded to Azure Blob: 2026-05-24T10-20-00+00-00_fe3cc636.json
+2026-05-24 15:50:09,394 INFO Auto-indexed commit fe3cc636 to Azure
+2026-05-24 15:50:09,395 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:51:05,212 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:51:05,409 INFO Captured commit 169eb46e on branch main (ticket: KAN-10, files: 1)
+2026-05-24 15:51:05,412 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-21-0400-00_169eb46e.json
+2026-05-24 15:51:05,598 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '415'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': '45dceb70-575a-11f1-bd95-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:51:06,993 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '45dceb70-575a-11f1-bd95-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:21:06 GMT'
+2026-05-24 15:51:06,993 INFO Indexed commit 169eb46e in Azure AI Search
+2026-05-24 15:51:06,995 INFO No environment configuration found.
+2026-05-24 15:51:06,999 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:51:07,001 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:51:08,971 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:51:08,972 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-21-04%2B00-00_169eb46e.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '770'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '46b2f228-575a-11f1-9e5f-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:51:10,271 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:21:09 GMT'
+    'ETag': '"0x8DEB97E2C816EE5"'
+    'x-ms-request-id': '12c57846-c01e-009b-3267-ebaaba000000'
+    'x-ms-client-request-id': '46b2f228-575a-11f1-9e5f-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:21:09 GMT'
+2026-05-24 15:51:10,271 INFO Uploaded to Azure Blob: 2026-05-24T10-21-04+00-00_169eb46e.json
+2026-05-24 15:51:10,272 INFO Auto-indexed commit 169eb46e to Azure
+2026-05-24 15:51:10,272 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:52:37,375 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:52:37,663 INFO Captured commit 36d6ca79 on branch main (ticket: none, files: 1)
+2026-05-24 15:52:37,668 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-22-3500-00_36d6ca79.json
+2026-05-24 15:52:37,831 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '395'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': '7cd6b3ee-575a-11f1-bda5-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:52:39,421 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '7cd6b3ee-575a-11f1-bda5-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:22:38 GMT'
+2026-05-24 15:52:39,422 INFO Indexed commit 36d6ca79 in Azure AI Search
+2026-05-24 15:52:39,423 INFO No environment configuration found.
+2026-05-24 15:52:39,429 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:52:39,431 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:52:41,638 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:52:41,638 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-22-35%2B00-00_36d6ca79.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '754'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '7dcacdf6-575a-11f1-be93-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:52:42,996 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:22:42 GMT'
+    'ETag': '"0x8DEB97E63C6A32E"'
+    'x-ms-request-id': '47d55094-001e-00bb-1567-ebd11d000000'
+    'x-ms-client-request-id': '7dcacdf6-575a-11f1-be93-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:22:42 GMT'
+2026-05-24 15:52:42,997 INFO Uploaded to Azure Blob: 2026-05-24T10-22-35+00-00_36d6ca79.json
+2026-05-24 15:52:42,998 INFO Auto-indexed commit 36d6ca79 to Azure
+2026-05-24 15:52:42,998 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:53:17,745 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:53:18,044 INFO Captured commit 427df66a on branch main (ticket: none, files: 1)
+2026-05-24 15:53:18,047 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-23-1600-00_427df66a.json
+2026-05-24 15:53:18,262 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '407'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': '94f00777-575a-11f1-96f5-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:53:19,713 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '94f00777-575a-11f1-96f5-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:23:19 GMT'
+2026-05-24 15:53:19,713 INFO Indexed commit 427df66a in Azure AI Search
+2026-05-24 15:53:19,715 INFO No environment configuration found.
+2026-05-24 15:53:19,719 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:53:19,721 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:53:21,731 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:53:21,731 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-23-16%2B00-00_427df66a.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '762'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '95ce7a0e-575a-11f1-aefc-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:53:22,872 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:23:22 GMT'
+    'ETag': '"0x8DEB97E7B8AEE56"'
+    'x-ms-request-id': '295323b5-001e-0012-1b67-eb106f000000'
+    'x-ms-client-request-id': '95ce7a0e-575a-11f1-aefc-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:23:21 GMT'
+2026-05-24 15:53:22,872 INFO Uploaded to Azure Blob: 2026-05-24T10-23-16+00-00_427df66a.json
+2026-05-24 15:53:22,873 INFO Auto-indexed commit 427df66a to Azure
+2026-05-24 15:53:22,873 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:55:16,932 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:55:17,163 INFO Captured commit cbf91887 on branch main (ticket: KAN-11, files: 1)
+2026-05-24 15:55:17,168 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-25-1500-00_cbf91887.json
+2026-05-24 15:55:17,168 INFO AI context: attempting capture for cbf91887
+2026-05-24 15:55:17,333 INFO AI context saved for commit cbf91887 (10 messages)
+2026-05-24 15:55:17,535 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '434'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': 'dc079322-575a-11f1-bf4a-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:55:18,839 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': 'dc079322-575a-11f1-bf4a-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:25:18 GMT'
+2026-05-24 15:55:18,839 INFO Indexed commit cbf91887 in Azure AI Search
+2026-05-24 15:55:18,841 INFO No environment configuration found.
+2026-05-24 15:55:18,850 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:55:18,852 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:55:20,122 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:55:20,123 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-25-15%2B00-00_cbf91887.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '786'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'dcd088f1-575a-11f1-97fa-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:55:21,340 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:25:20 GMT'
+    'ETag': '"0x8DEB97EC22801B0"'
+    'x-ms-request-id': 'f16140b6-601e-0092-5f67-ebef69000000'
+    'x-ms-client-request-id': 'dcd088f1-575a-11f1-97fa-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:25:19 GMT'
+2026-05-24 15:55:21,340 INFO Uploaded to Azure Blob: 2026-05-24T10-25-15+00-00_cbf91887.json
+2026-05-24 15:55:21,341 INFO Auto-indexed commit cbf91887 to Azure
+2026-05-24 15:55:21,342 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)
+2026-05-24 15:56:11,310 INFO EngMemory runner started for repo: D:/Microsoft hackathon/ai-workflow-app
+2026-05-24 15:56:11,491 INFO Captured commit e6096dae on branch main (ticket: KAN-12, files: 1)
+2026-05-24 15:56:11,494 INFO Written to D:\Microsoft hackathon\ai-workflow-app\.ai_memory\commits\2026-05-24T10-26-1000-00_e6096dae.json
+2026-05-24 15:56:11,494 INFO AI context: attempting capture for e6096dae
+2026-05-24 15:56:11,631 INFO AI context saved for commit e6096dae (10 messages)
+2026-05-24 15:56:11,781 INFO Request URL: 'https://engmemory-search.search.windows.net/indexes('commits')/docs/search.index?api-version=2026-04-01'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '405'
+    'Accept': 'application/json;odata.metadata=none'
+    'x-ms-client-request-id': 'fc5cf2b6-575a-11f1-b009-1826495184e2'
+    'User-Agent': 'azsdk-python-search-documents/12.0.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:56:13,092 INFO Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=none; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': 'fc5cf2b6-575a-11f1-b009-1826495184e2'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:26:12 GMT'
+2026-05-24 15:56:13,092 INFO Indexed commit e6096dae in Azure AI Search
+2026-05-24 15:56:13,094 INFO No environment configuration found.
+2026-05-24 15:56:13,098 INFO ManagedIdentityCredential will use IMDS
+2026-05-24 15:56:13,101 INFO Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-05-24 15:56:14,087 INFO DefaultAzureCredential acquired a token from AzureCliCredential
+2026-05-24 15:56:14,087 INFO Request URL: 'https://engmemorystorage001.blob.core.windows.net/commits/2026-05-24T10-26-10%2B00-00_e6096dae.json'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '765'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.4 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'fd265361-575a-11f1-bec6-1826495184e2'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-05-24 15:56:15,425 INFO Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Sun, 24 May 2026 10:26:14 GMT'
+    'ETag': '"0x8DEB97EE2655DD5"'
+    'x-ms-request-id': '34ee2fd6-801e-00a5-4367-eb3dc5000000'
+    'x-ms-client-request-id': 'fd265361-575a-11f1-bec6-1826495184e2'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 24 May 2026 10:26:14 GMT'
+2026-05-24 15:56:15,426 INFO Uploaded to Azure Blob: 2026-05-24T10-26-10+00-00_e6096dae.json
+2026-05-24 15:56:15,427 INFO Auto-indexed commit e6096dae to Azure
+2026-05-24 15:56:15,427 INFO ENGMEMORY_API_URL not set — skipping remote ingest (local only)

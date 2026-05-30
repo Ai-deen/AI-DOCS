@@ -28,8 +28,8 @@ export default function FileUpload({ onUpload, isUploading }) {
       {...getRootProps()}
       className={`border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-colors ${
         isDragActive
-          ? 'border-blue-500 bg-blue-50'
-          : 'border-gray-300 hover:border-blue-400 hover:bg-gray-50'
+          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
+          : 'border-gray-300 dark:border-gray-600 hover:border-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
       } ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`}
     >
       <input {...getInputProps()} />
@@ -37,7 +37,7 @@ export default function FileUpload({ onUpload, isUploading }) {
         {isUploading ? (
           <>
             <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600"></div>
-            <p className="text-gray-600">Uploading & extracting text...</p>
+            <p className="text-gray-600 dark:text-gray-300">Uploading & extracting text...</p>
           </>
         ) : isDragActive ? (
           <>
@@ -47,8 +47,8 @@ export default function FileUpload({ onUpload, isUploading }) {
         ) : (
           <>
             <FileText size={40} className="text-gray-400" />
-            <p className="text-gray-600">
-              <span className="font-medium text-blue-600">Click to upload</span> or drag & drop
+            <p className="text-gray-600 dark:text-gray-300">
+              <span className="font-medium text-blue-600 dark:text-blue-400">Click to upload</span> or drag & drop
             </p>
             <p className="text-sm text-gray-400">PDF, DOCX, TXT, MD, CSV, JSON (max 10MB)</p>
           </>
