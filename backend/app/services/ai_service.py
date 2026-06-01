@@ -1,6 +1,10 @@
 import time
+import logging
 from openai import OpenAI, AzureOpenAI
 from ..config import settings
+
+logger = logging.getLogger(__name__)
+MAX_RETRIES = 3
 
 
 def get_ai_client():
@@ -15,6 +19,11 @@ def get_ai_client():
         return OpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=settings.openrouter_api_key,
+        )
+    elif settings.ai_provider == "groq":
+        return OpenAI(
+            base_url="https://api.groq.com/openai/v1",
+            api_key=settings.groq_api_key,
         )
     elif settings.ai_provider == "ollama":
         return OpenAI(
@@ -31,6 +40,8 @@ def get_model_name():
         return settings.azure_openai_deployment
     elif settings.ai_provider == "openrouter":
         return settings.openrouter_model
+    elif settings.ai_provider == "groq":
+        return settings.groq_model
     elif settings.ai_provider == "ollama":
         return settings.ollama_model
     else:
@@ -94,25 +105,41 @@ Document:
 }
 
 
+def _call_with_retry(client, **kwargs):
+    """Call the AI API with retry logic for rate limits."""
+    for attempt in range(MAX_RETRIES):
+        try:
+            return client.chat.completions.create(**kwargs)
+        except Exception as e:
+            if "429" in str(e) or "rate_limit" in str(e).lower():
+                wait_time = 2 ** attempt * 5  # 5s, 10s, 20s
+                logger.warning(f"Rate limited, retrying in {wait_time}s (attempt {attempt + 1}/{MAX_RETRIES})")
+                time.sleep(wait_time)
+            else:
+                raise
+    raise RuntimeError("Rate limit exceeded after retries. Please wait a moment and try again.")
+
+
 async def analyze_document(content: str, analysis_type: str) -> dict:
     """Run AI analysis on document content."""
     start_time = time.time()
 
     prompt_template = ANALYSIS_PROMPTS.get(analysis_type, ANALYSIS_PROMPTS["summary"])
-    prompt = prompt_template.format(content=content[:8000])  # Limit content length
+    prompt = prompt_template.format(content=content[:4000])  # Limit content to reduce tokens
 
     client = get_ai_client()
     model = get_model_name()
 
     try:
-        response = client.chat.completions.create(
+        response = _call_with_retry(
+            client,
             model=model,
             messages=[
                 {"role": "system", "content": "You are an expert document analyst. Provide thorough, structured analysis with clear formatting using markdown."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.3,
-            max_tokens=2000,
+            max_tokens=1500,
         )
 
         result = response.choices[0].message.content
@@ -121,7 +148,7 @@ async def analyze_document(content: str, analysis_type: str) -> dict:
         return {
             "result": result,
             "processing_time": processing_time,
-            "confidence_score": 0.85,  # Placeholder - could be enhanced
+            "confidence_score": 0.85,
             "status": "completed"
         }
     except Exception as e:
@@ -151,7 +178,8 @@ async def chat_with_document(message: str, document_content: str = None) -> str:
     messages.append({"role": "user", "content": message})
 
     try:
-        response = client.chat.completions.create(
+        response = _call_with_retry(
+            client,
             model=model,
             messages=messages,
             temperature=0.7,
@@ -167,28 +195,36 @@ async def generate_flashcards(content: str) -> list[dict]:
     client = get_ai_client()
     model = get_model_name()
 
-    prompt = f"""Generate 8-12 study flashcards (question and answer pairs) from the following document.
-Each flashcard should test understanding of a key concept, fact, or idea from the document.
+    prompt = f"""Generate 10-15 high-quality study flashcards from the following document.
+
+Requirements for each flashcard:
+- Questions must be informative and directly about the document's content
+- Focus on key concepts, important facts, and core ideas that help the reader truly learn the material
+- Include a mix of question types: "What", "Why", "How", and "Explain" questions
+- Answers should be detailed enough to be educational (2-3 sentences), not just one-word responses
+- Questions should test understanding, not just recall — help the user actually learn something
+- Avoid trivial or surface-level questions
 
 Return ONLY a JSON array of objects with "question" and "answer" fields. No other text.
 Example format:
 [
-  {{"question": "What is X?", "answer": "X is..."}},
-  {{"question": "Why does Y happen?", "answer": "Y happens because..."}}
+  {{"question": "What is the main purpose of X and why is it important?", "answer": "X serves to... This is important because..."}},
+  {{"question": "How does Y work in the context of this document?", "answer": "Y works by... The key mechanism is..."}}
 ]
 
 Document:
-{content[:8000]}"""
+{content[:4000]}"""
 
     try:
-        response = client.chat.completions.create(
+        response = _call_with_retry(
+            client,
             model=model,
             messages=[
-                {"role": "system", "content": "You are an expert educator. Generate clear, concise flashcards that help students learn key concepts. Return ONLY valid JSON."},
+                {"role": "system", "content": "You are an expert educator who creates high-quality study materials. Generate informative flashcards that help learners deeply understand the document content. Each question should be thought-provoking and each answer should be educational. Return ONLY valid JSON."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.5,
-            max_tokens=3000,
+            max_tokens=2000,
         )
 
         import json
@@ -201,5 +237,5 @@ Document:
         if isinstance(cards, list):
             return [{"question": c["question"], "answer": c["answer"]} for c in cards if "question" in c and "answer" in c]
         return []
-    except Exception:
-        return []
+    except Exception as e:
+        raise RuntimeError(f"AI service error: {str(e)}")
