@@ -216,4 +216,4 @@ ai-workflow-app/
 
 ## License
 
-MIT — Built for Microsoft AI Hackathon 2025
+MIT — Built for Microsoft AI Hackathon 2026

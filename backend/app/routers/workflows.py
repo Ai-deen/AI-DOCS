@@ -4,9 +4,9 @@ from typing import List
 from datetime import datetime
 
 from ..database import get_db
-from ..models import Document, Workflow, Analysis
-from ..schemas import WorkflowCreate, WorkflowResponse
-from ..services.ai_service import analyze_document
+from ..models import Document, Workflow, Analysis, Flashcard
+from ..schemas import WorkflowCreate, WorkflowResponse, FlashcardResponse, FlashcardGenerateRequest
+from ..services.ai_service import analyze_document, generate_flashcards
 
 router = APIRouter(prefix="/workflows", tags=["workflows"])
 
@@ -91,3 +91,56 @@ async def delete_workflow(workflow_id: int, db: Session = Depends(get_db)):
     db.delete(workflow)
     db.commit()
     return {"message": "Workflow deleted"}
+
+
+@router.post("/{workflow_id}/flashcards", response_model=List[FlashcardResponse])
+async def generate_workflow_flashcards(workflow_id: int, db: Session = Depends(get_db)):
+    """Generate flashcards for a workflow's document."""
+    workflow = db.query(Workflow).filter(Workflow.id == workflow_id).first()
+    if not workflow:
+        raise HTTPException(status_code=404, detail="Workflow not found")
+
+    doc = db.query(Document).filter(Document.id == workflow.document_id).first()
+    if not doc or not doc.content:
+        raise HTTPException(status_code=400, detail="Document has no content")
+
+    # Check if flashcards already exist for this workflow
+    existing = db.query(Flashcard).filter(Flashcard.workflow_id == workflow_id).all()
+    if existing:
+        return existing
+
+    # Generate flashcards using AI
+    try:
+        cards_data = await generate_flashcards(doc.content)
+    except RuntimeError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+
+    if not cards_data:
+        raise HTTPException(status_code=500, detail="Failed to generate flashcards - no cards returned")
+
+    flashcards = []
+    for card in cards_data:
+        fc = Flashcard(
+            workflow_id=workflow_id,
+            question=card["question"],
+            answer=card["answer"],
+        )
+        db.add(fc)
+        flashcards.append(fc)
+
+    db.commit()
+    for fc in flashcards:
+        db.refresh(fc)
+
+    return flashcards
+
+
+@router.get("/{workflow_id}/flashcards", response_model=List[FlashcardResponse])
+async def get_workflow_flashcards(workflow_id: int, db: Session = Depends(get_db)):
+    """Get flashcards for a workflow."""
+    workflow = db.query(Workflow).filter(Workflow.id == workflow_id).first()
+    if not workflow:
+        raise HTTPException(status_code=404, detail="Workflow not found")
+
+    flashcards = db.query(Flashcard).filter(Flashcard.workflow_id == workflow_id).all()
+    return flashcards
