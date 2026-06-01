@@ -1,10 +1,13 @@
 from pydantic_settings import BaseSettings
 from typing import Optional
+from pathlib import Path
+
+_ENV_FILE = Path(__file__).parent.parent / ".env"
 
 
 class Settings(BaseSettings):
     # AI Provider
-    ai_provider: str = "openrouter"
+    ai_provider: str = "groq"
 
     # OpenAI
     openai_api_key: Optional[str] = None
@@ -12,7 +15,15 @@ class Settings(BaseSettings):
 
     # OpenRouter
     openrouter_api_key: Optional[str] = None
-    openrouter_model: str = "google/gemini-2.0-flash-001"
+    openrouter_model: str = "openrouter/auto"
+
+    # Groq (free, fast inference)
+    groq_api_key: Optional[str] = None
+    groq_model: str = "llama-3.1-8b-instant"
+
+    # Gemini (Google AI - free tier)
+    gemini_api_key: Optional[str] = None
+    gemini_model: str = "gemini-2.0-flash"
 
     # Azure OpenAI
     azure_openai_api_key: Optional[str] = None
@@ -31,7 +42,9 @@ class Settings(BaseSettings):
     cors_origins: str = "http://localhost:5173,http://localhost:3000"
 
     class Config:
-        env_file = ".env"
+        env_file = str(_ENV_FILE)
+        env_file_encoding = "utf-8"
+        extra = "ignore"
 
 
 settings = Settings()

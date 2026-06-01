@@ -110,9 +110,13 @@ async def generate_workflow_flashcards(workflow_id: int, db: Session = Depends(g
         return existing
 
     # Generate flashcards using AI
-    cards_data = await generate_flashcards(doc.content)
+    try:
+        cards_data = await generate_flashcards(doc.content)
+    except RuntimeError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+
     if not cards_data:
-        raise HTTPException(status_code=500, detail="Failed to generate flashcards")
+        raise HTTPException(status_code=500, detail="Failed to generate flashcards - no cards returned")
 
     flashcards = []
     for card in cards_data:
