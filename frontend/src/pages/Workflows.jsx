@@ -33,6 +33,8 @@ export default function Workflows() {
   const [analyses, setAnalyses] = useState([]);
   const [flashcards, setFlashcards] = useState([]);
   const [flashcardsLoading, setFlashcardsLoading] = useState(false);
+  const [flashcardsProgress, setFlashcardsProgress] = useState(0);
+  const [flashcardsProgressText, setFlashcardsProgressText] = useState('');
   const [analysesLoading, setAnalysesLoading] = useState(false);
 
   useEffect(() => {
@@ -103,14 +105,43 @@ export default function Workflows() {
   const handleGenerateFlashcards = async () => {
     if (!selectedWorkflow) return;
     setFlashcardsLoading(true);
+    setFlashcardsProgress(0);
+    setFlashcardsProgressText('Preparing document...');
+
+    // Simulate progress stages while waiting for AI generation
+    const progressSteps = [
+      { progress: 15, text: 'Analyzing document content...' },
+      { progress: 35, text: 'Identifying key concepts...' },
+      { progress: 55, text: 'Generating Q&A pairs...' },
+      { progress: 75, text: 'Refining flashcards...' },
+      { progress: 90, text: 'Finalizing cards...' },
+    ];
+
+    let stepIndex = 0;
+    const progressInterval = setInterval(() => {
+      if (stepIndex < progressSteps.length) {
+        setFlashcardsProgress(progressSteps[stepIndex].progress);
+        setFlashcardsProgressText(progressSteps[stepIndex].text);
+        stepIndex++;
+      }
+    }, 2000);
+
     try {
       const cards = await generateFlashcards(selectedWorkflow.id);
+      clearInterval(progressInterval);
+      setFlashcardsProgress(100);
+      setFlashcardsProgressText('Complete!');
+      // Brief pause to show 100% before showing cards
+      await new Promise((resolve) => setTimeout(resolve, 500));
       setFlashcards(cards);
-      toast.success('Flashcards generated!');
+      toast.success(`${cards.length} flashcards generated!`);
     } catch (err) {
+      clearInterval(progressInterval);
       toast.error(err.response?.data?.detail || 'Failed to generate flashcards');
     } finally {
       setFlashcardsLoading(false);
+      setFlashcardsProgress(0);
+      setFlashcardsProgressText('');
     }
   };
 
@@ -148,29 +179,29 @@ export default function Workflows() {
         {/* Back button */}
         <button
           onClick={() => setSelectedWorkflow(null)}
-          className="text-sm text-gray-500 hover:text-gray-700 mb-4 flex items-center gap-1"
+          className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 mb-4 flex items-center gap-1"
         >
           ← Back to Workflows
         </button>
 
         {/* Header & Status Tracker */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-6">
+        <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">{selectedWorkflow.name}</h1>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{selectedWorkflow.name}</h1>
               {selectedWorkflow.description && (
-                <p className="text-gray-500 text-sm mt-1">{selectedWorkflow.description}</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">{selectedWorkflow.description}</p>
               )}
             </div>
             <span
               className={`px-3 py-1 rounded-full text-sm font-medium ${
                 selectedWorkflow.status === 'completed'
-                  ? 'bg-green-100 text-green-700'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                   : selectedWorkflow.status === 'processing'
-                  ? 'bg-blue-100 text-blue-700'
+                  ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
                   : selectedWorkflow.status === 'failed'
-                  ? 'bg-red-100 text-red-700'
-                  : 'bg-gray-100 text-gray-700'
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
             >
               {selectedWorkflow.status.charAt(0).toUpperCase() + selectedWorkflow.status.slice(1)}
@@ -178,7 +209,7 @@ export default function Workflows() {
           </div>
 
           {/* Progress Checklist */}
-          <div className="flex flex-wrap gap-3 text-sm">
+          <div className="flex flex-wrap gap-3 text-sm text-gray-700 dark:text-gray-300">
             <span className="flex items-center gap-1">
               {completedSteps === steps.length ? (
                 <CheckCircle size={14} className="text-green-500" />
@@ -193,7 +224,7 @@ export default function Workflows() {
               ) : flashcardsStatus === 'In Progress' ? (
                 <Loader2 size={14} className="text-blue-500 animate-spin" />
               ) : (
-                <span className="w-3.5 h-3.5 rounded-full border-2 border-gray-300 inline-block" />
+                <span className="w-3.5 h-3.5 rounded-full border-2 border-gray-300 dark:border-gray-600 inline-block" />
               )}
               Flashcards: {flashcardsStatus}
             </span>
@@ -201,7 +232,7 @@ export default function Workflows() {
         </div>
 
         {/* Tabs */}
-        <div className="border-b border-gray-200 mb-6">
+        <div className="border-b border-gray-200 dark:border-gray-700 mb-6">
           <div className="flex gap-1">
             {TABS.map((tab) => {
               const Icon = tab.icon;
@@ -211,8 +242,8 @@ export default function Workflows() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
                     activeTab === tab.id
-                      ? 'border-purple-600 text-purple-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                      ? 'border-purple-600 text-purple-600 dark:text-purple-400 dark:border-purple-400'
+                      : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:border-gray-300 dark:hover:border-gray-600'
                   }`}
                 >
                   <Icon size={16} />
@@ -231,20 +262,20 @@ export default function Workflows() {
                 <Loader2 size={24} className="animate-spin text-purple-600" />
               </div>
             ) : analyses.length === 0 ? (
-              <p className="text-gray-500 text-center py-8">No analyses available yet.</p>
+              <p className="text-gray-500 dark:text-gray-400 text-center py-8">No analyses available yet.</p>
             ) : (
               analyses.map((analysis) => (
                 <div
                   key={analysis.id}
-                  className="bg-white rounded-xl border border-gray-200 shadow-sm p-6"
+                  className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-semibold text-gray-900 capitalize">
+                    <h3 className="font-semibold text-gray-900 dark:text-white capitalize">
                       {analysis.analysis_type.replace('_', ' ')}
                     </h3>
                     <div className="flex items-center gap-2 text-sm">
                       {statusIcon(analysis.status)}
-                      <span className="text-gray-500">
+                      <span className="text-gray-500 dark:text-gray-400">
                         {analysis.processing_time
                           ? `${analysis.processing_time.toFixed(1)}s`
                           : ''}
@@ -252,7 +283,7 @@ export default function Workflows() {
                     </div>
                   </div>
                   {analysis.result && (
-                    <div className="prose prose-sm max-w-none markdown-content text-gray-700">
+                    <div className="prose prose-sm dark:prose-invert max-w-none markdown-content text-gray-700 dark:text-gray-300">
                       <ReactMarkdown>{analysis.result}</ReactMarkdown>
                     </div>
                   )}
@@ -266,8 +297,8 @@ export default function Workflows() {
           <div>
             {flashcards.length === 0 && !flashcardsLoading && (
               <div className="text-center py-12">
-                <BookOpen size={48} className="mx-auto mb-4 text-gray-300" />
-                <p className="text-gray-500 mb-4">
+                <BookOpen size={48} className="mx-auto mb-4 text-gray-300 dark:text-gray-600" />
+                <p className="text-gray-500 dark:text-gray-400 mb-4">
                   No flashcards yet. Generate Q&A cards from this document.
                 </p>
                 <button
@@ -280,16 +311,34 @@ export default function Workflows() {
             )}
 
             {flashcardsLoading && (
-              <div className="flex flex-col items-center justify-center h-32 gap-2">
-                <Loader2 size={24} className="animate-spin text-purple-600" />
-                <p className="text-sm text-gray-500">Generating flashcards...</p>
+              <div className="flex flex-col items-center justify-center py-12 gap-4">
+                {/* Progress bar */}
+                <div className="w-full max-w-md">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      {flashcardsProgressText}
+                    </p>
+                    <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
+                      {flashcardsProgress}%
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div
+                      className="bg-gradient-to-r from-purple-500 to-purple-600 h-3 rounded-full transition-all duration-700 ease-out"
+                      style={{ width: `${flashcardsProgress}%` }}
+                    ></div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 dark:text-gray-500 mt-2">
+                  AI is reading your document and creating Q&A cards...
+                </p>
               </div>
             )}
 
             {flashcards.length > 0 && (
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     {flashcards.length} cards — click a card to flip it
                   </p>
                 </div>
